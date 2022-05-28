@@ -1,17 +1,26 @@
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`🟢 Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🔴 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
 
 const countLetters = function(sentence) {
   const result = {};
-  let spacesRemoved = sentence.split(" ").join("");
-  for (let character of spacesRemoved) {
-    if (character !== "");
-    if (result[character]) {
-      result[character] += 1;
+  for (let character of sentence) {
+    if (character === " ") {
+      continue;
     } else {
-      result[character] = 1;
+      if (result[character]) {
+        result[character] += 1;
+      } else {
+        result[character] = 1;
+      }
     }
   }
-  console.log("results",result);
   return result;
 };
-
 countLetters("today is thursday");
+
+assertEqual(countLetters("today is thursday").t,2);
