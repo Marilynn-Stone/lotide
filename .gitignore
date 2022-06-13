@@ -1,6 +1,7 @@
-# dependencies
 node_modules
 
 settings.json
 
 .swp
+
+.DS_Store
